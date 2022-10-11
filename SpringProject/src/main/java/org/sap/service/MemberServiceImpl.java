@@ -1,5 +1,7 @@
 package org.sap.service;
 
+import java.util.ArrayList;
+
 import org.sap.mapper.MemberMapper;
 import org.sap.model.MemberVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +24,10 @@ public class MemberServiceImpl implements MemberService {
 		
 		mvo.setPassword(encodedPassword);
 		mm.register(mvo);
+		
 	}
+	public ArrayList<MemberVO> list(MemberVO mvo) {
+		return mm.list(mvo);
+	}
+	
 }

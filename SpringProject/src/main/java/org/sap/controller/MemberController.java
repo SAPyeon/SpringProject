@@ -21,6 +21,7 @@ public class MemberController {
 	@RequestMapping(value = "/users/loginProcess", method = RequestMethod.POST)
 	public void loginPost() {
 		System.out.println("로그인");
+		
 	}
 	@RequestMapping(value="/users/member", method= RequestMethod.GET)
 	public void Member() {
@@ -38,7 +39,12 @@ public class MemberController {
 	@RequestMapping(value="/users/register", method=RequestMethod.POST)
 	public String registerPost(MemberVO mvo) {
 		ms.register(mvo);
+		System.out.println(mvo);
 		return "redirect:/";
+	}
+	@RequestMapping(value="/users/logout", method = RequestMethod.GET)
+	public void logout() {
+		
 	}
 	
 }

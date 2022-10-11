@@ -39,6 +39,15 @@
 		</property>
 
 	</bean>
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>/WEB-INF/message/message</value>
+			</list>
+		</property>
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="cacheSeconds" value="5" />
+	</bean>
 
 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource"
 		destroy-method="close">
@@ -50,5 +59,6 @@
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 	<mybatis-spring:scan base-package="org.sap.mapper" />
-	<context:component-scan base-package="org.sap.service" />
+	<context:component-scan
+		base-package="org.sap.service" />
 </beans>

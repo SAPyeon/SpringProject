@@ -51,7 +51,9 @@ button:hover{
 	width: 510px;
 	height: 50px;
 }
-
+.errorMessage{
+	text-align: center;
+}
 #find_id {
 	width: 350px;
 	height: 70px;
